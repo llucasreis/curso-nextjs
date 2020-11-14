@@ -15,10 +15,10 @@ export default function Top10({ products }: Top10Props) {
       <h1>Top 10</h1>
 
       <ul>
-          {products.map(products => {
+          {products.map(product => {
             return (
-              <li key={products.id}>
-                {products.title}
+              <li key={product.id}>
+                {product.title}
               </li>
             )
           })}
@@ -27,6 +27,7 @@ export default function Top10({ products }: Top10Props) {
   )
 }
 
+// será executado no momento do yarn build
 export const getStaticProps: GetStaticProps<Top10Props> = async (context) => {
   const response = await fetch('http://localhost:3333/products');
 
