@@ -56,7 +56,7 @@ export default function Home({ recommendedProducts }: HomeProps) {
 // TTFB -> Time To First Byte
 export const getServerSideProps: GetServerSideProps<HomeProps> = async () => {
   const recommendedProducts = await client().query([
-    Prismic.Predicates.at('document.tyoe', 'product')
+    Prismic.Predicates.at('document.type', 'product')
   ])
   // const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/recommended`);
 
